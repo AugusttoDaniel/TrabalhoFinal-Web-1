@@ -7,55 +7,73 @@
     <link href="meusprodutos.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div class="product-management-interface">
-      <input type="text" class="input-text" placeholder="Pizzas" />
-      <div class="product-item">
-        <img src="hamburger.jpg" alt="Hamburger" width="100" height="100" />
-        <div class="product-details">
-          <div class="field">
-            <input type="text" class="input-text" placeholder="Nome*" />
-          </div>
-          <div class="field">
-            <input type="text" class="input-text" placeholder="Descrição" />
-          </div>
-          <div class="price-options">
-            <div class="price-option">
-              <label class="label">Preço único</label>
-              <input type="text" class="price-input" />
-            </div>
-            <div class="price-option">
-              <label class="label">Preço / Desconto (Opcional)</label>
-              <input type="text" class="price-input" />
-              <span class="discount">14%</span>
-            </div>
-          </div>
-          <button class="button">Adicionar mais um item</button>
+    <header>
+      <div id="menuLateral" class="menu-lateral">
+        <h2>Menu</h2>
+        <h3>Pedidos</h3>
+        <a href="/index.html">Pedidos</a>
+        <h3>Clientes</h3>
+        <a href="/meusclientes.html">Meus Clientes</a>
+
+        <h3>Produtos</h3>
+        <a href="/meusprodutos.html">Meus Produtos</a>
+      </div>
+      <!-- Header Section -->
+      <div class="header">
+        <span
+          class="menu-button"
+          onclick="toggleMenu(); event.stopPropagation();"
+          >&#9776;</span
+        >
+        <div class="user-info">
+          User
+          <img src="" alt="User" width="30" height="30" />
         </div>
+      </div>
+    </header>
+
+    <div class="product-management-interface">
+      <!-- Botão para Pizzas -->
+      <div id="toggleProductsPizzas" class="input-with-arrow">
+        <input type="text" class="input-text" placeholder="Pizzas" readonly />
+        <span class="arrow">&#9650;</span>
+      </div>
+      <!-- Conteúdo dos produtos para Pizzas -->
+      <div class="produtosPizzas">
+  
       </div>
 
-      <div class="product-item">
-        <img src="pizza.jpg" alt="Pizza Margherita" width="100" height="100" />
-        <div class="product-details">
-          <div class="field">
-            <input type="text" class="input-text" placeholder="Nome*" />
-          </div>
-          <div class="field">
-            <input type="text" class="input-text" placeholder="Descrição" />
-          </div>
-          <div class="price-options">
-            <div class="price-option">
-              <label class="label">Preço único</label>
-              <input type="text" class="price-input" />
-            </div>
-            <div class="price-option">
-              <label class="label">Preço / Desconto (Opcional)</label>
-              <input type="text" class="price-input" />
-              <span class="discount">0%</span>
-            </div>
-          </div>
-          <button class="button">Adicionar mais um item</button>
-        </div>
+      <!-- Botão para Hamburguer -->
+      <div id="toggleProductsHamburguer" class="input-with-arrow">
+        <input type="text" class="input-text" placeholder="Hamburguer" readonly />
+        <span class="arrow">&#9650;</span>
+      </div>
+      <!-- Conteúdo dos produtos para Hamburguer -->
+      <div class="produtosHamburguer">
+        <!-- Conteúdo dos produtos para Hamburguer aqui -->
+      </div>
+
+      <!-- Botão para Bebidas -->
+      <div id="toggleProductsBebidas" class="input-with-arrow">
+        <input type="text" class="input-text" placeholder="Bebidas" readonly />
+        <span class="arrow">&#9650;</span>
+      </div>
+      <!-- Conteúdo dos produtos para Bebidas -->
+      <div class="produtosBebidas">
+        
+      </div>
+
+      <!-- Botão para Doces -->
+      <div></div>
+      <div id="toggleProductsDoces" class="input-with-arrow">
+        <input type="text" class="input-text" placeholder="Doces" readonly />
+        <span class="arrow">&#9650;</span>
+      </div>
+      <!-- Conteúdo dos produtos para Doces -->
+      <div class="produtosDoces">
+
       </div>
     </div>
+    <script src="meusprodutos.js"></script>
   </body>
 </html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciamento de Clientes</title>
+    <link href="meusclientes.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <div id="menuLateral" class="menu-lateral">
+        <h2>Menu</h2>
+        <h3>Pedidos</h3>
+        <a href="/index.html">Pedidos</a>
+        <h3>Clientes</h3>
+        <a href="/meusclientes.html">Meus Clientes</a>
+
+        <h3>Produtos</h3>
+        <a href="/meusprodutos.html">Meus Produtos</a>
+      </div>
+      <!-- Header Section -->
+      <div class="header">
+        <span
+          class="menu-button"
+          onclick="toggleMenu(); event.stopPropagation();"
+          >&#9776;</span
+        >
+        <div class="user-info">
+          User
+          <img src="" alt="User" width="30" height="30" />
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <h1>Gerenciamento de Clientes</h1>
+      <form id="clienteForm">
+        <input type="text" id="nome" placeholder="Nome" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="text" id="endereco" placeholder="Endereço" required />
+        <input type="tel" id="telefone" placeholder="Telefone" required />
+        <button type="submit">Salvar</button>
+        <button type="button" onclick="limparFormulario()">Limpar</button>
+      </form>
+      <table id="clientesTable">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Endereço</th>
+            <th>Telefone</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Os clientes serão inseridos aqui -->
+        </tbody>
+      </table>
+    </div>
+    <script src="meusclientes.js"></script>
+  </body>
+</html>
