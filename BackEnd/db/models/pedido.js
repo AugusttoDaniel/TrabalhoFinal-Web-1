@@ -23,7 +23,8 @@ module.exports = (sequelize, DataTypes) => {
   Pedido.init({
     ClienteID: DataTypes.INTEGER,
     DataPedido: DataTypes.DATE,
-    Status: DataTypes.STRING
+    Status: DataTypes.STRING,
+    PrecoTotal: DataTypes.DECIMAL,
   }, {
     sequelize,
     modelName: 'Pedido',

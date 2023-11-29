@@ -2,6 +2,34 @@ const express = require('express');
 const router = express.Router();
 const db = require('../../db/models');
 
+router.get('/pedido/pendentes', async (req, res) => {
+  try {
+    const pedidosPendentes = await db.Pedido.findAll({
+      where: {
+        Status: "pendente"
+      },
+      include: [
+        {
+          model: db.ItemPedido,
+          as: 'itensPedido'
+        },
+        {
+          model: db.Cliente,
+          as: 'cliente',
+          attributes: ['Nome', 'Telefone']
+        }
+      ]
+    });
+
+    if (pedidosPendentes && pedidosPendentes.length > 0) {
+      res.json(pedidosPendentes);
+    } else {
+      res.status(404).send('Nenhum pedido pendente encontrado');
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 // Create a new Pedido
 router.post('/pedido', async (req, res) => {
   try {

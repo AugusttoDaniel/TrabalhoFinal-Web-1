@@ -1,9 +1,7 @@
 function novoPedido() {
-  console.log("novoPedido function called"); // This should appear in the console when the function is called
   document.getElementById("demo-modal").classList.add("active");
 }
 function cardModal(produto) {
-  console.log("cardModal function called with produto", produto);
   const modal = document.getElementById("demo-modal2");
   modal.querySelector(".modal__title").textContent = produto.Nome;
   modal.querySelector(".modal__description").textContent = produto.Descricao;
@@ -47,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
       fetch(`http://localhost:8080/produto/categoria/${categoria}`)
         .then((response) => response.json())
         .then((data) => {
-          console.log("Categoria before calling preencherCartoes:", categoria);
           if (Array.isArray(data)) {
             preencherCartoes(categoria, data);
           } else {
@@ -127,3 +124,35 @@ document.addEventListener("DOMContentLoaded", (event) => {
     quantityDisplay.textContent = quantity + 1;
   });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  function carregarPedidosPendentes() {
+    fetch('http://localhost:8080/pedido/pendentes')
+    .then(response => {
+      if (response.headers.get("content-type").includes("application/json")) {
+        return response.json();
+      } else {
+        throw new Error('Não é JSON');
+      }
+    })
+    .then(pedidos => {
+      preencherPedidosPendentes(pedidos) 
+    })
+    .catch(error => console.error("Erro ao carregar pedidos pendentes:", error));
+  }
+  
+  function preencherPedidosPendentes(pedidos) {
+    const secaoPedidos = document.getElementById("Pedidos");
+    secaoPedidos.innerHTML = ''; 
+    pedidos.forEach(pedido => {
+      const elementoPedido = document.createElement("div");
+      elementoPedido.classList.add("pedido");
+      elementoPedido.textContent = `Pedido #${pedido.id}`;
+      secaoPedidos.appendChild(elementoPedido);
+    });
+  }
+  carregarPedidosPendentes();
+});
+

@@ -18,6 +18,9 @@ module.exports = {
       Status: {
         type: Sequelize.STRING
       },
+      PrecoTotal: {
+        type: Sequelize.DECIMAL
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
