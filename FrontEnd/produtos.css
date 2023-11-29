@@ -1,0 +1,117 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 2%;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  min-height: 35vh;
+  justify-content: space-between;
+  padding: 5px 20px;
+  background: #d9d9d9;
+  color: white;
+  border-radius: 5px;
+}
+
+.header .logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.header .logo-section .logo {
+  width: 10vw;
+  height: 10vw;
+  background-color: #000;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 3px solid #00bfff;
+}
+.header .logo-section .texto {
+  display: flex;
+  flex-direction: column;
+}
+.header .logo-section .title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.header .logo-section .corpo {
+  font-size: 12px;
+  font-weight: bold;
+}
+.header .agenda-button {
+  padding: 5px 15px;
+  background: #fff;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 3vw;
+  right: 3vw;
+}
+
+.icon-bar {
+    display: flex;
+    align-items: flex-end; 
+    justify-content: flex-end; 
+    font-size: 24px;
+    width: 100%; 
+}
+
+.header .icon-bar i {
+  padding: 0 5px;
+}
+
+.nav {
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 1%;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  font-size: 1rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+  border: none;
+  padding: 5px;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
+  gap: 10px;
+}
+
+.item {
+  background-color: #e0e0e0;
+  height: 20vh;
+  border-radius: 4%;
+}

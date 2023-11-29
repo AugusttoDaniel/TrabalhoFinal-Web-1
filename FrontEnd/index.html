@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página de Pedidos</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <header>
+      <div id="menuLateral" class="menu-lateral">
+        <h2>Menu</h2>
+        <h3>Pedidos</h3>
+        <a href="/produtos.html">Pedidos</a>
+        <a href="/Modal.html">Meus Clientes</a>
+
+        <h3>Análises</h3>
+        <a href="#">Análises</a>
+        <a href="#">Estatísticas</a>
+
+        <h3>Clientes</h3>
+        <a href="#">Meus Clientes</a>
+
+        <h3>Produtos</h3>
+        <a href="#">Meus Produtos</a>
+      </div>
+      <!-- Header Section -->
+      <div class="header">
+        <span
+          class="menu-button"
+          onclick="toggleMenu(); event.stopPropagation();"
+          >&#9776;</span
+        >
+        <div class="user-info">
+          User
+          <img src="" alt="User" width="30" height="30" />
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <button class="button" onclick="novoPedido()">+ Novo Pedido</button>
+      <div class="content">
+        <div class="pendentes">
+          <h1>Pendentes</h1>
+        </div>
+      </div>
+
+      <!-- Modal for Food Categories -->
+      <div id="demo-modal" class="modal">
+        <div class="modal__content">
+          <a href="#" class="modal__close" onclick="fecharModal()">&times;</a>
+          <nav>
+            <ul>
+              <li><a href="#Pizza">Pizza</a></li>
+              <li><a href="#Hambúrguer">Lanche</a></li>
+              <li><a href="#Bebidas">Bebidas</a></li>
+              <li><a href="#Doces">Outros</a></li>
+            </ul>
+          </nav>
+          <!-- Modal Body -->
+          <div class="modal__body">
+            <!-- Sections for Different Food Categories -->
+            <section id="Pizza">
+              <h2>Pizza</h2>
+              <div class="row">
+                <div class="column"></div>
+              </div>
+            </section>
+
+            <section id="Hambúrguer">
+              <h2>Lanche</h2>
+              <div class="row">
+                <div class="column"></div>
+              </div>
+            </section>
+
+            <section id="Bebidas">
+              <h2>Bebidas</h2>
+              <div class="row">
+                <div class="column"></div>
+              </div>
+            </section>
+
+            <section id="Doces">
+              <h2>Outros</h2>
+              <div class="row">
+                <div class="column"></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div id="demo-modal2" class="modal2">
+        <div class="modal__content2">
+          <a href="#" class="modal__close2" onclick="fecharModal2()">
+            &times;
+          </a>
+          <div class="modal__body2">
+            <div class="left-column">
+              <img
+                src="pizza-image.jpg"
+                alt="Pizza Hawaiana"
+                class="pizza-image"
+              />
+            </div>
+            <div class="right-column">
+              <h2 class="modal__title"></h2>
+              <p class="modal__description"></p>
+              <p class="price">R$ 54,00</p>
+              <textarea
+                name="comments"
+                placeholder="Comentários (Opcional)"
+              ></textarea>
+              <div class="quantity-selector">
+                <button class="decrease">-</button>
+                <div class="quantity">1</div>
+                <button class="increase">+</button>
+              </div>
+              <button type="submit" class="add-to-cart">Adicionar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+    <script src="index.js"></script>
+  </body>
+</html>
