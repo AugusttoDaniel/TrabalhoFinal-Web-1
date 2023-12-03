@@ -31,9 +31,13 @@
           <img src="" alt="User" width="30" height="30" />
         </div>
       </div>
+      <button onclick="toggleCartDisplay()">Carrinho</button>
     </header>
 
     <main>
+      <div id="cart" class="cart">
+        <!-- Cart items will be added here -->
+      </div>
       <button class="button" onclick="novoPedido()">+ Novo Pedido</button>
       <div class="content">
         <div class="pendentes">
@@ -112,10 +116,20 @@
                 <div class="quantity">1</div>
                 <button class="increase">+</button>
               </div>
-              <button type="submit" class="add-to-cart">Adicionar</button>
+              <button type="button" class="add-to-cart" onclick="addToCart(currentProduct)">Adicionar</button>
             </div>
           </div>
         </div>
+      </div>
+      <div id="menuLateral" class="menu-itens">
+        <h2>Menu</h2>
+        <h3>Pedidos</h3>
+        <a href="/index.html">Pedidos</a>
+        <h3>Clientes</h3>
+        <a href="/meusclientes.html">Meus Clientes</a>
+
+        <h3>Produtos</h3>
+        <a href="/meusprodutos.html">Meus Produtos</a>
       </div>
     </main>
 
