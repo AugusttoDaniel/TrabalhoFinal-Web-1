@@ -3,14 +3,31 @@ const express = require("express");
 const router = express.Router();
 
 // Criar um novo cliente
-router.post("/cliente", async (req, res) => {
+router.post("/pedido", async (req, res) => {
   try {
-    const novoCliente = await db.Cliente.create(req.body);
-    res.status(201).json(novoCliente);
+    const { ClienteID, PrecoTotal, Status, DataPedido } = req.body;
+
+    console.log(ClienteID);
+    if (!ClienteID) {
+      return res.status(400).json({ error: "Cliente não especificado." });
+    }
+
+    // Aqui você pode adicionar outras validações, se necessário
+
+    // Crie o pedido somente se o ClienteId estiver presente
+    const novoPedido = await db.Pedido.create({
+      ClienteID,
+      PrecoTotal,
+      Status,
+      DataPedido,
+    });
+
+    res.status(201).json(novoPedido);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 });
+
 
 // Obter todos os clientes
 router.get("/cliente", async (req, res) => {

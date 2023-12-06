@@ -82,6 +82,58 @@ main > .content {
   border-radius: 5px;
   height: 100%;
 }
+/* Estilos para o Modal de Seleção de Cliente */
+.modal-selecao-cliente {
+  display: none; /* Modal escondido por padrão */
+  position: fixed; /* Fica em cima do conteúdo da página */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  z-index: 1000; /* Eleva o modal acima de outros elementos */
+}
+
+.modal-selecao-cliente.active {
+  display: block; /* Exibe o modal quando tem a classe 'active' */
+}
+
+.modal__content-cliente {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%; /* Você pode ajustar a largura conforme necessário */
+  max-height: 70%; /* Altura máxima para o conteúdo */
+  overflow-y: auto; /* Permite rolagem vertical se necessário */
+}
+
+.modal__close-cliente {
+  display: flex;
+  text-decoration: none;
+  font-size: 40px;
+  justify-content: flex-end;
+  width: 100%;
+  cursor: pointer; /* Muda o cursor para indicar ação */
+}
+
+.modal__body-cliente {
+  overflow-x: hidden;
+  margin-top: 20px; /* Espaço entre o cabeçalho e o corpo */
+}
+
+.button-selecionar-cliente {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Cor de fundo */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; /* Muda o cursor para indicar ação */
+  margin-top: 20px; /* Espaço acima do botão */
+}
 
 main > .modal {
   display: none; /* Modal escondido por padrão */
@@ -289,4 +341,62 @@ nav li {
 nav ul li a {
   text-decoration: none;
   color: black;
+}
+.menuitens {
+  position: fixed;
+  top: 0;
+  right: -450px; /* Move o menu para a direita da tela */
+  height: 100%;
+  width: 50%;
+  max-width: 300px;
+  background-color: rgb(255, 140, 0);
+  color: white;
+  padding: 20px;
+  transition: transform 0.3s ease; /* Adiciona uma transição suave */
+  overflow-y: auto;
+}
+
+/* Estilo para o menu lateral quando está ativo */
+.menu-itens-ativo {
+  right: 0; /* Alinha o menu à direita da tela */
+}
+
+/* Estilo para o botão dentro do menu */
+.botaoFinalizar {
+  background-color: #00f; /* Cor azul usando código hexadecimal */
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Estilo para o conteúdo principal */
+.conteudo-principal {
+  margin-left: 200px; /* Define uma margem à esquerda para acomodar o menu lateral */
+  padding: 20px; /* Espaçamento interno do conteúdo principal */
+}
+#tabela-clientes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#tabela-clientes th,
+#tabela-clientes td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#tabela-clientes th {
+  background-color: #f2f2f2;
+}
+
+#tabela-clientes tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#tabela-clientes tr:hover {
+  background-color: #ddd;
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página de Pedidos</title>
+    <title>PVD</title>
     <link href="index.css" rel="stylesheet" type="text/css" />
   </head>
 
@@ -31,20 +31,48 @@
           <img src="" alt="User" width="30" height="30" />
         </div>
       </div>
-      <button onclick="toggleCartDisplay()">Carrinho</button>
     </header>
 
     <main>
-      <div id="cart" class="cart">
-        <!-- Cart items will be added here -->
-      </div>
-      <button class="button" onclick="novoPedido()">+ Novo Pedido</button>
+      <button class="button" onclick="abrirModalCliente()">
+        + Novo Pedido
+      </button>
       <div class="content">
         <div class="pendentes">
           <h1>Pendentes</h1>
         </div>
       </div>
       <section id="Pedidos"></section>
+      <!-- Modal para Seleção de Cliente -->
+      <div id="modal-selecao-cliente" class="modal-selecao-cliente">
+        <div class="modal__content-cliente">
+          <a
+            href="#"
+            class="modal__close-cliente"
+            onclick="fecharModalCliente()"
+            >&times;</a
+          >
+          <h2>Selecionar Cliente</h2>
+          <div class="modal__body-cliente">
+            <!-- Tabela de clientes será adicionada aqui -->
+            <table id="tabela-clientes"></table>
+            <button
+              type="button"
+              class="button-selecionar-cliente"
+              onclick="confirmarSelecaoCliente()"
+            >
+              Confirmar Seleção
+            </button>
+            <button
+              type="button"
+              class="button-selecionar-cliente"
+              onclick="window.location.href='/meusclientes.html';"
+            >
+              Adicionar Cliente
+            </button>
+          </div>
+        </div>
+      </div>
       <!-- Modal for Food Categories -->
       <div id="demo-modal" class="modal">
         <div class="modal__content">
@@ -98,7 +126,7 @@
           <div class="modal__body2">
             <div class="left-column">
               <img
-                src="pizza-image.jpg"
+                src=""
                 alt="Pizza Hawaiana"
                 class="pizza-image"
               />
@@ -113,23 +141,22 @@
               ></textarea>
               <div class="quantity-selector">
                 <button class="decrease">-</button>
-                <div class="quantity">1</div>
+                <div id="quantity"class="quantity">1</div>
                 <button class="increase">+</button>
               </div>
-              <button type="button" class="add-to-cart" onclick="addToCart(currentProduct)">Adicionar</button>
+              <button
+                type="button"
+                class="add-to-cart"
+                onclick="addToCart(currentProduct)"
+              >
+                Adicionar
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <div id="menuLateral" class="menu-itens">
-        <h2>Menu</h2>
-        <h3>Pedidos</h3>
-        <a href="/index.html">Pedidos</a>
-        <h3>Clientes</h3>
-        <a href="/meusclientes.html">Meus Clientes</a>
-
-        <h3>Produtos</h3>
-        <a href="/meusprodutos.html">Meus Produtos</a>
+      <div id="menu-itens" class="menuitens">
+        <button id="botaoFinalizar" type="button">Finalizar</button>
       </div>
     </main>
 

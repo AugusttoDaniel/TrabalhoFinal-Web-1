@@ -12,7 +12,24 @@ router.post('/itempedido', async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+//todos os itens pedidos de um pedido especifico
+router.get('/itempedido/:idPedido', async (req, res) => {
+  try {
+    const itemPedidos = await db.ItemPedido.findAll({
+      where: {
+        PedidoID: req.params.idPedido // Use req.params para acessar parâmetros de rota
+      }
+    });
 
+    if (itemPedidos && itemPedidos.length > 0) {
+      res.json(itemPedidos);
+    } else {
+      res.json({});
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 // Get all ItemPedidos
 router.get('/itempedido', async (req, res) => {
   try {

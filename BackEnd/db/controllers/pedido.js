@@ -12,6 +12,12 @@ router.get("/pedido/pendentes", async (req, res) => {
         {
           model: db.ItemPedido,
           as: "itensPedido",
+          attributes: ['PrecoUnitario', 'Quantidade'],
+          include: [{
+            model: db.Produto, 
+            as: "produto",
+            attributes: ['Nome'] 
+        }]
         },
         {
           model: db.Cliente,
@@ -24,7 +30,7 @@ router.get("/pedido/pendentes", async (req, res) => {
     if (pedidosPendentes && pedidosPendentes.length > 0) {
       res.json(pedidosPendentes);
     } else {
-      res.status(404).send("Nenhum pedido pendente encontrado");
+      res.json({});
     }
   } catch (error) {
     res.status(500).json({ error: error.message });
